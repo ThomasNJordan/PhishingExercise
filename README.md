@@ -15,4 +15,5 @@ The landing page sends POST request to a backened server waiting for a request t
 
 ## Demo
 This is a demo video of the phishing site in action
-![demo](phish.mp4)
+![demo](https://img.youtube.com/vi/bd6uhxib7mY/maxresdefault.jpg
+)(https://youtu.be/bd6uhxib7mY)
