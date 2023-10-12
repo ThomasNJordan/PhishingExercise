@@ -1,5 +1,5 @@
 # PhishingExercise
-A phishing site I created for a Information Security & Policy assignment.
+A sample phishing email for Indeed.com. Created for an ISP-363 assignment. 
 
 ## Email
 The following is a sample phishing email for Samantha Carter, a fake person who is the CEO of Gatesatar, a high end security gate and door company.
